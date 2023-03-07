@@ -1,0 +1,52 @@
+/* --------------------------------------------- 
+Template Name: Material Pro Admin
+Author: Themedesigner
+Email: niravjoshi87@gmail.com
+File: scss
+/* --------------------------------------------- */
+@use "@angular/material" as mat;
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
+
+@include mat.core();
+
+// Set the default typography
+@include mat.all-component-typographies(
+  mat.define-typography-config($font-family: "Poppins")
+);
+
+// Define the default theme
+$default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: mat.define-palette(mat.$indigo-palette),
+      accent: mat.define-palette(mat.$pink-palette),
+    ),
+    typography:
+      mat.define-typography-config(
+        $font-family: "Poppins",
+      ),
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($default-theme);
+
+@import "variable";
+
+@import "mixins/spacing";
+@import "mixins/color";
+@import "mixins/font";
+
+@import "component/global";
+@import "component/heading";
+
+@import "component/header";
+@import "component/sidebar";
+@import "component/spinner";
+@import "component/card";
+@import "component/dashboard";
+
+@import "responsive";
+
+@import "../styles/icons/material-design-iconic-font/scss/materialdesignicons.min.scss";
